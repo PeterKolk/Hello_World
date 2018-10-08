@@ -5,15 +5,21 @@
     		class="sapUiResponsiveMargin"
     		width="auto">
     		<content>
+    			<Button 
+				id = "button1" 
+				text = "{i18n>showHelloButtonText}" 
+				icon="sap-icon://world"
+				press="onShowHello"/>
     			<Input
 				value="{/recipient/name}"
 				description="Hello {/recipient/name}"
 				valueLiveUpdate="true"
 				width="60%"/>
-				<Button 
-				id = "button1" 
-				text = "{i18n>showHelloButtonText}" 
-				press="onShowHello"/>
+				<Button
+        		id="helloDialogButton"
+        		text="{i18n>openDialogButtonText}"
+        		press="onOpenDialog"
+        		class="sapUiSmallMarginEnd"/>
 				<FormattedText
             	htmlText="Hello {/recipient/name}"
         		class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
