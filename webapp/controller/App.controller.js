@@ -3,6 +3,8 @@ sap.ui.define([
 ], function (Controller){
    "use strict";
    return Controller.extend("HelloWorld.HelloWorld.controller.App", {
-      
+      		onOpenDialog : function () {
+			this.getOwnerComponent().openHelloDialog();
+		}
 	});
 });
