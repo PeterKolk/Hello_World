@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"HelloWorld/HelloWorld/model/models"
-], function (UIComponent, Device, models) {
+	"sap/ui/model/json/JSONModel",
+   "sap/ui/model/resource/ResourceModel"
+], function (UIComponent, Device, JSONModel, ResourceModel) {
 	"use strict";
 
 	return UIComponent.extend("HelloWorld.HelloWorld.Component", {
@@ -24,7 +25,17 @@ sap.ui.define([
 			this.getRouter().initialize();
 
 			// set the device model
-			this.setModel(models.createDeviceModel(), "device");
+			var oData = {
+            recipient : {
+               name : "World"
+            	}
+        	};
+        	var oModel = new JSONModel(oData);
+        	this.setModel(oModel);
+        	var i18nModel = new ResourceModel({
+            	bundleName: "HelloWorld.HelloWorld.i18n.i18n"
+        	});
+         this.setModel(i18nModel, "i18n");
 		}
 	});
 });

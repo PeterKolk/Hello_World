@@ -1,0 +1,22 @@
+<mvc:View controllerName="HelloWorld.HelloWorld.controller.HelloPanel" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+		<Panel
+			headerText="{i18n>helloPanelTitle}"
+    		class="sapUiResponsiveMargin"
+    		width="auto">
+    		<content>
+    			<Input
+				value="{/recipient/name}"
+				description="Hello {/recipient/name}"
+				valueLiveUpdate="true"
+				width="60%"/>
+				<Button 
+				id = "button1" 
+				text = "{i18n>showHelloButtonText}" 
+				press="onShowHello"/>
+				<FormattedText
+            	htmlText="Hello {/recipient/name}"
+        		class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+    		</content>
+    	</Panel>
+</mvc:View>
