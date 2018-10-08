@@ -60,6 +60,10 @@
 				"settings": {
 					"bundleName": "HelloWorld.HelloWorld.i18n.i18n"
 				}
+			},
+			"invoice": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "invoices.json"
 			}
 		},
 		"resources": {

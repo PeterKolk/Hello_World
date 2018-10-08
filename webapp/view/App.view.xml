@@ -10,6 +10,7 @@
 				</headerContent>
             	<content>
             		<mvc:XMLView viewName="HelloWorld.HelloWorld.view.HelloApp"/>
+            		<mvc:XMLView viewName="HelloWorld.HelloWorld.view.InvoiceList"/>
 				</content>
 			</Page>
 		</pages>
