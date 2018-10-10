@@ -97,24 +97,28 @@
 				"async": true,
 				"viewPath": "HelloWorld.HelloWorld.view",
 				"controlAggregation": "pages",
-				"controlId": "idAppControl",
-				"clearControlAggregation": false
+				"controlId": "app"
 			},
 			"routes": [
 				{
-					"name": "RouteApp",
-					"pattern": "RouteApp",
-					"target": [
-						"TargetApp"
-					]
+					"name": "overview",
+					"pattern": "",
+					"target": "overview"
+				},
+				{
+					"pattern": "detail/{invoicePath}",
+					"name": "detail",
+					"target": "detail"
 				}
 			],
 			"targets": {
-				"TargetApp": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewName": "App"
+				"overview": {
+					"viewID": "overview",
+					"viewName": "Overview"
+				},
+				"detail": {
+					"viewId": "detail",
+					"viewName": "Detail"
 				}
 			}
 		}

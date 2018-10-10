@@ -30,7 +30,9 @@
 					showMeasure: false
 				}
 			}"
-			numberUnit="{view>/unit}">
+			numberUnit="{view>/unit}"
+			type="Navigation"
+			press="onPress">
          	
 			</ObjectListItem>
       </items>

@@ -1,0 +1,13 @@
+<mvc:View
+	controllerName="HelloWorld.HelloWorld.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		title="{i18n>detailPageTitle}">
+		<ObjectHeader
+			intro="Last update = {invoice>last_update}"
+			title="Date = {invoice>date}"/>
+	</Page>
+</mvc:View>
