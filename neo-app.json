@@ -18,6 +18,14 @@
         "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/BA1_HANA_WX52EX",
+      "target": {
+        "type": "destination",
+        "name": "BA1_HANA_WX52EX"
+      },
+      "description": "HANA_WX52EX"
     }
   ],
   "sendWelcomeFileRedirect": true

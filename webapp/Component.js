@@ -36,9 +36,9 @@ sap.ui.define([
         	var i18nModel = new ResourceModel({
             	bundleName: "HelloWorld.HelloWorld.i18n.i18n"
         	});
-         this.setModel(i18nModel, "i18n");
+        	this.setModel(i18nModel, "i18n");
          
-         // set dialog
+        	// set dialog
 			this._helloDialog = new Dialog(this.getRootControl());
 		},
 
