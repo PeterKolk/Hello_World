@@ -14,12 +14,11 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"monitoring.xsodata": {
-				"uri": "/BA1_HANA_WX52EX/NNROOT/Z85_Local_Development/WX52EX/monitoring.xsodata/",
+			"dq_app.xsodata": {
+				"uri": "/BA1_HANA_WX52EX/NNROOT/Z85_Local_Development/WX52EX/dq_app.xsodata",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/monitoring.xsodata/metadata.xml"
+					"odataVersion": "2.0"
 				}
 			}
 		}
@@ -39,14 +38,11 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "HelloWorld.HelloWorld.view.App",
+			"viewName": "HelloWorld.HelloWorld.view.RuleSetGroup",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -68,27 +64,22 @@
 					"bundleName": "HelloWorld.HelloWorld.i18n.i18n"
 				}
 			},
-			"invoice": {
-				"dataSource": "monitoring.xsodata"
-			},
-			"": {
-				"uri": "/BA1_HANA_WX52EX/NNROOT/Z85_Local_Development/WX52EX/monitoring.xsodata/",
+			"dq_app": {
+				"uri": "/BA1_HANA_WX52EX/NNROOT/Z85_Local_Development/WX52EX/dq_app.xsodata",
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
 					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
+					"defaultBindingMode": "TwoWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "monitoring.xsodata",
+				"dataSource": "dq_app.xsodata",
 				"preload": true
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -97,28 +88,27 @@
 				"async": true,
 				"viewPath": "HelloWorld.HelloWorld.view",
 				"controlAggregation": "pages",
-				"controlId": "app"
+				"controlId": "RuleSetGroup"
 			},
-			"routes": [
-				{
-					"name": "overview",
-					"pattern": "",
-					"target": "overview"
-				},
-				{
-					"pattern": "detail/{invoicePath}",
-					"name": "detail",
-					"target": "detail"
-				}
-			],
+			"routes": [{
+				"name": "ruleSetGroup",
+				"pattern": "",
+				"target": "overview"
+			}, {
+				"pattern": "RuleSetGroup/{ruleSetGroupID}",
+				"name": "ruleSet",
+				"target": "ruleSet"
+			}],
 			"targets": {
 				"overview": {
 					"viewID": "overview",
-					"viewName": "Overview"
+					"viewName": "Overview",
+					"viewLevel": 0
 				},
-				"detail": {
-					"viewId": "detail",
-					"viewName": "Detail"
+				"ruleSet": {
+					"viewId": "ruleSet",
+					"viewName": "RuleSet",
+					"viewLevel": 1
 				}
 			}
 		}

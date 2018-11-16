@@ -1,0 +1,31 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="HelloWorld.HelloWorld.controller.RuleSetGroup" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+   <Table id="RuleSetGroup" class="sapUiResponsiveMargin" width="auto" items="{dq_app>/RuleSetGroups}">
+   	<headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>appTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" search="onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
+    	<columns>
+    		<Column>
+				<Text text="{i18n>ruleSetGroupId}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>ruleSetGroupName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>dateModified}"/>
+			</Column>
+		</columns>
+      <items>
+         <ColumnListItem type="Navigation" press="onPress">
+         	<cells>
+         		<ObjectNumber number="{dq_app>RULESETGROUPID}" emphasized="false" id="RULESETGROUPID"/>
+         		<ObjectNumber number="{dq_app>RULESETGROUPNAME}" emphasized="false"/>
+         		<ObjectNumber number="{            path: 'dq_app>DATE_MODIFIED',        type: 'sap.ui.model.type.DateTime',        formatOptions: {style: 'medium'}            }" emphasized="false"/>
+         	</cells>
+		</ColumnListItem>
+      </items>
+   </Table>
+</mvc:View>

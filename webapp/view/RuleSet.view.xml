@@ -1,0 +1,55 @@
+<mvc:View
+	controllerName="HelloWorld.HelloWorld.controller.RuleSet"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		title="{i18n>detailPageTitle}">
+		<Table
+		id="RuleSetList"
+    	class="sapUiResponsiveMargin"
+    	width="auto"
+    	items="{dq_app>RuleSet}"
+    	>
+   	<headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" search="onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
+    	<columns>
+    		<Column>
+				<Text text="{i18n>ruleSetId}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>RuleSetName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>RuleSetGroupName}"/>
+			</Column>
+			<Column>
+				<Text text="{i18n>DateModified}"/>
+			</Column>
+		</columns>
+      <items>
+         <ColumnListItem
+			type="Navigation"
+			press="onPress">
+         	<cells>
+         		<ObjectNumber number="{dq_app>RULESETID}" emphasized="false"/>
+         		<ObjectNumber number="{dq_app>RULESETNAME}" emphasized="false"/>
+         		<ObjectNumber number="{dq_app>RULESETGROUPID}" emphasized="false"/>
+         		<ObjectNumber number="{
+         		path: 'dq_app>DATE_MODIFIED',
+    			type: 'sap.ui.model.type.DateTime',
+    			formatOptions: {style: 'medium'}
+         		}"
+         		emphasized="false"/>
+         	</cells>
+		</ColumnListItem>
+      </items>
+   </Table>
+	</Page>
+</mvc:View>
